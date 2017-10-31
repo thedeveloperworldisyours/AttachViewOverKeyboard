@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AttachOverKeyboard</string>
+
+    <string name="activity_messenger_video">Video</string>
+    <string name="activity_messenger_photo">Photo</string>
+    <string name="activity_messenger_album">Album</string>
+    <string name="activity_messenger_audio">Audio</string>
+    <string name="activity_messenger_location">Location</string>
+    <string name="activity_messenger_contact">Contact</string>
+    <string name="activity_messenger_document">Document</string>
+    <string name="activity_messenger_link">Link</string>
+    <string name="activity_messenger_save">Save</string>
+</resources>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/keyboard_rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/ib_close"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/keyboard_layout_view"
+        android:background="@android:color/transparent" />
+
+    <ScrollView
+        android:id="@+id/keyboard_layout_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <RelativeLayout
+
+                android:id="@+id/keyboard_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_toLeftOf="@+id/keyboard_image_photo_image">
+
+                <ImageButton
+                    android:id="@+id/keyboard_video_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_messenger_margin_elements"
+                    android:background="@drawable/attach_circle"
+                    android:src="@drawable/ic_message_videocam" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/keyboard_video_button"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:text="@string/activity_messenger_video" />
+
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/keyboard_image_photo_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_messenger_margin_elements"
+                android:background="@drawable/attach_circle"
+                android:src="@drawable/ic_message_camera" />
+
+            <TextView
+                android:id="@+id/keyboard_image_photo_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keyboard_image_photo_image"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                android:text="@string/activity_messenger_photo" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/keyboard_image_photo_image">
+
+                <ImageButton
+                    android:id="@+id/keyboard_album_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_messenger_margin_elements"
+                    android:background="@drawable/attach_circle"
+                    android:src="@drawable/ic_message_album" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/keyboard_album_image"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:text="@string/activity_messenger_album" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/keyboard_audio_relative_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keyboard_image_photo_text"
+                android:layout_toLeftOf="@+id/keyboard_location_button">
+
+                <ImageButton
+                    android:id="@+id/keyboard_audio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="@dimen/activity_messenger_margin_elements"
+                    android:background="@drawable/attach_circle"
+                    android:src="@drawable/ic_message_voice" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/keyboard_audio_button"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:text="@string/activity_messenger_audio" />
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/keyboard_location_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keyboard_image_photo_text"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_messenger_margin_elements"
+                android:background="@drawable/attach_circle"
+                android:src="@drawable/ic_message_location" />
+
+            <TextView
+                android:id="@+id/keyboard_location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keyboard_location_button"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                android:text="@string/activity_messenger_location" />
+
+            <RelativeLayout
+                android:id="@+id/keyboard_contact_relative_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keyboard_image_photo_text"
+                android:layout_toRightOf="@+id/keyboard_location_button">
+
+                <ImageButton
+                    android:id="@+id/keyboard_contact_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_messenger_margin_elements"
+                    android:background="@drawable/attach_circle"
+                    android:src="@drawable/ic_contacts_white" />
+
+                <TextView
+                    android:id="@+id/keyboard_contact_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/keyboard_contact_button"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:text="@string/activity_messenger_contact" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/keyboard_document_relative_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keyboard_location_text"
+                android:layout_toLeftOf="@+id/keyboard_link_button">
+
+                <ImageButton
+                    android:id="@+id/keyboard_document_relative_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_messenger_margin_elements"
+                    android:background="@drawable/attach_circle"
+                    android:src="@drawable/ic_message_file" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/keyboard_document_relative_button"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:text="@string/activity_messenger_document" />
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/keyboard_link_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keyboard_location_text"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_messenger_margin_elements"
+                android:background="@drawable/attach_circle"
+                android:src="@drawable/ic_message_link" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keyboard_link_button"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                android:text="@string/activity_messenger_link" />
+
+            <RelativeLayout
+                android:id="@+id/keyboard_save_relative_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keyboard_location_text"
+                android:layout_toRightOf="@+id/keyboard_link_button">
+
+                <ImageButton
+                    android:id="@+id/keyboard_save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_messenger_margin_elements"
+                    android:background="@drawable/attach_circle"
+                    android:src="@drawable/ic_message_save" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/keyboard_save_button"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:text="@string/activity_messenger_save" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
