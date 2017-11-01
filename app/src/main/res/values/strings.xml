@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AttachOverKeyboard</string>
+    <string name="app_name">ViewOverKeyboard</string>
 
     <string name="activity_messenger_video">Video</string>
     <string name="activity_messenger_photo">Photo</string>

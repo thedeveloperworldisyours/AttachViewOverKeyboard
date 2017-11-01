@@ -2,7 +2,6 @@ package com.thedeveloperworldisyours.attachoverkeyboard;
 
 import android.animation.Animator;
 import android.content.Context;
-import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,50 +26,43 @@ import android.widget.ScrollView;
 public class MessageActivity extends AppCompatActivity {
 
     private PopupWindow mPopupWindow;
-    private RelativeLayout parentLayout;
-    private boolean isKeyBoardVisible;
-    private boolean isPopupVisible;
-    ScrollView scrollView;
+    private RelativeLayout mParentLayout;
+    private boolean mIsKeyBoardVisible;
+    private boolean mIsPopupVisible;
+    ScrollView mScrollView;
     Button mButton;
-
-    Point p;
-
-    RelativeLayout mRelative;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.message_activity);
 
-        parentLayout = (RelativeLayout) findViewById(R.id.root_view);
+        mParentLayout = (RelativeLayout) findViewById(R.id.root_view);
         mButton = (Button) findViewById(R.id.activity_messenger_button);
 
 
-        parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
+        mParentLayout.getViewTreeObserver().addOnGlobalLayoutListener(() -> {
                 Rect r = new Rect();
 
-                parentLayout.getWindowVisibleDisplayFrame(r);
+                mParentLayout.getWindowVisibleDisplayFrame(r);
 
-                int heightDiff = parentLayout.getRootView().getHeight() - (r.bottom - r.top);
+                int heightDiff = mParentLayout.getRootView().getHeight() - (r.bottom - r.top);
                 if (heightDiff > 100) {
                     //enter your code here
-                    if (isPopupVisible) {
+                    if (mIsPopupVisible) {
                         keepKeyboard();
-                        isPopupVisible = false;
+                        mIsPopupVisible = false;
                         mPopupWindow.dismiss();
                     }
                 } else {
                     //enter code for hid
                 }
-            }
         });
 
-        checkKeyboardIsOpen(parentLayout);
+        checkKeyboardIsOpen(mParentLayout);
 
         mButton.setOnClickListener((View view) -> {
-            if (isKeyBoardVisible) {
+            if (mIsKeyBoardVisible) {
                 showPopUpKeyboard();
             } else {
                 showPopup();
@@ -85,7 +77,7 @@ public class MessageActivity extends AppCompatActivity {
 
     private void checkKeyboardIsOpen(final View contentView) {
 
-        parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(() -> {
+        mParentLayout.getViewTreeObserver().addOnGlobalLayoutListener(() -> {
 
             Rect r = new Rect();
             contentView.getWindowVisibleDisplayFrame(r);
@@ -97,17 +89,17 @@ public class MessageActivity extends AppCompatActivity {
 
             if (keypadHeight > screenHeight * 0.15) { // 0.15 ratio is perhaps enough to determine keypad height.
                 // keyboard is opened
-                isKeyBoardVisible = true;
+                mIsKeyBoardVisible = true;
             } else {
                 // keyboard is closed
-                isKeyBoardVisible = false;
+                mIsKeyBoardVisible = false;
             }
 
         });
     }
 
     public void showPopUpKeyboard() {
-        isPopupVisible = true;
+        mIsPopupVisible = true;
         // Initialize a new instance of LayoutInflater service
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 
@@ -115,7 +107,7 @@ public class MessageActivity extends AppCompatActivity {
         View customView = inflater.inflate(R.layout.popup_in_keyboard, null);
 
 
-        scrollView = (ScrollView) customView.findViewById(R.id.keyboard_layout_view);
+        mScrollView = (ScrollView) customView.findViewById(R.id.keyboard_layout_view);
         // Initialize a new instance of popup window
         mPopupWindow = new PopupWindow(
                 customView,
@@ -130,15 +122,12 @@ public class MessageActivity extends AppCompatActivity {
         Button closeButton = (Button) customView.findViewById(R.id.ib_close);
 
         // Set a click listener for the popup window close button
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        closeButton.setOnClickListener((View view) -> {
                 // Dismiss the popup window
-                isPopupVisible = false;
+                mIsPopupVisible = false;
                 mPopupWindow.dismiss();
-            }
         });
-        mPopupWindow.showAtLocation(parentLayout, Gravity.CENTER, 0, 0);
+        mPopupWindow.showAtLocation(mParentLayout, Gravity.CENTER, 0, 0);
 
     }
 
@@ -167,33 +156,27 @@ public class MessageActivity extends AppCompatActivity {
         // Get a reference for the custom view close button
         Button closeButton = (Button) popupView.findViewById(R.id.popup_new_close_button);
 
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        closeButton.setOnClickListener((View view) -> {
                 // Dismiss the popup window
-                isPopupVisible = false;
+                mIsPopupVisible = false;
                 popup.dismiss();
-            }
         });
 
-        belowCloseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        belowCloseButton.setOnClickListener((View view) -> {
                 // Dismiss the popup window
-                isPopupVisible = false;
+                mIsPopupVisible = false;
                 popup.dismiss();
-            }
         });
 
-        popup.showAtLocation(parentLayout, Gravity.NO_GRAVITY, 0, 0);//location[1]-popupHeight);
+        popup.showAtLocation(mParentLayout, Gravity.NO_GRAVITY, 0, 0);//location[1]-popupHeight);
     }
 
     public void setSizeForSoftKeyboard() {
-        scrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        mScrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 Rect r = new Rect();
-                parentLayout.getWindowVisibleDisplayFrame(r);
+                mParentLayout.getWindowVisibleDisplayFrame(r);
 
                 int screenHeight = getUsableScreenHeight();
                 int heightDifference = screenHeight
@@ -208,9 +191,9 @@ public class MessageActivity extends AppCompatActivity {
                 if (heightDifference > 100) {
                     int keyBoardHeight = heightDifference;
 
-                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) scrollView.getLayoutParams();
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mScrollView.getLayoutParams();
                     params.height = keyBoardHeight;
-                    scrollView.setLayoutParams(params);
+                    mScrollView.setLayoutParams(params);
                 }
             }
         });
@@ -226,7 +209,7 @@ public class MessageActivity extends AppCompatActivity {
             return metrics.heightPixels;
 
         } else {
-            return parentLayout.getRootView().getHeight();
+            return mParentLayout.getRootView().getHeight();
         }
     }
 

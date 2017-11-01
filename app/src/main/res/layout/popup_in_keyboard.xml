@@ -20,7 +20,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white">
+            android:background="@color/colorPrimaryDark">
 
             <RelativeLayout
 
@@ -44,7 +44,8 @@
                     android:layout_below="@+id/keyboard_video_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
-                    android:text="@string/activity_messenger_video" />
+                    android:text="@string/activity_messenger_video"
+                    android:textColor="@color/colorText" />
 
             </RelativeLayout>
 
@@ -64,7 +65,8 @@
                 android:layout_below="@+id/keyboard_image_photo_image"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="@dimen/activity_messenger_margin_elements"
-                android:text="@string/activity_messenger_photo" />
+                android:text="@string/activity_messenger_photo"
+                android:textColor="@color/colorText" />
 
 
             <RelativeLayout
@@ -86,7 +88,8 @@
                     android:layout_below="@+id/keyboard_album_image"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
-                    android:text="@string/activity_messenger_album" />
+                    android:text="@string/activity_messenger_album"
+                    android:textColor="@color/colorText" />
 
             </RelativeLayout>
 
@@ -114,7 +117,8 @@
                     android:layout_below="@+id/keyboard_audio_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
-                    android:text="@string/activity_messenger_audio" />
+                    android:text="@string/activity_messenger_audio"
+                    android:textColor="@color/colorText" />
             </RelativeLayout>
 
             <ImageButton
@@ -134,7 +138,8 @@
                 android:layout_below="@+id/keyboard_location_button"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="@dimen/activity_messenger_margin_elements"
-                android:text="@string/activity_messenger_location" />
+                android:text="@string/activity_messenger_location"
+                android:textColor="@color/colorText" />
 
             <RelativeLayout
                 android:id="@+id/keyboard_contact_relative_layout"
@@ -158,7 +163,8 @@
                     android:layout_below="@+id/keyboard_contact_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
-                    android:text="@string/activity_messenger_contact" />
+                    android:text="@string/activity_messenger_contact"
+                    android:textColor="@color/colorText" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -182,7 +188,8 @@
                     android:layout_below="@+id/keyboard_document_relative_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
-                    android:text="@string/activity_messenger_document" />
+                    android:text="@string/activity_messenger_document"
+                    android:textColor="@color/colorText" />
             </RelativeLayout>
 
             <ImageButton
@@ -201,7 +208,8 @@
                 android:layout_below="@+id/keyboard_link_button"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="@dimen/activity_messenger_margin_elements"
-                android:text="@string/activity_messenger_link" />
+                android:text="@string/activity_messenger_link"
+                android:textColor="@color/colorText" />
 
             <RelativeLayout
                 android:id="@+id/keyboard_save_relative_layout"
@@ -224,7 +232,8 @@
                     android:layout_below="@+id/keyboard_save_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
-                    android:text="@string/activity_messenger_save" />
+                    android:text="@string/activity_messenger_save"
+                    android:textColor="@color/colorText" />
             </RelativeLayout>
 
         </RelativeLayout>

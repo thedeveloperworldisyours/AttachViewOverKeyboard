@@ -18,7 +18,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white">
+            android:background="@color/colorPrimaryDark">
 
             <RelativeLayout
 
@@ -42,6 +42,7 @@
                     android:layout_below="@+id/keyboard_video_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:textColor="@color/colorText"
                     android:text="@string/activity_messenger_video" />
 
             </RelativeLayout>
@@ -61,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/keyboard_image_photo_image"
                 android:layout_centerHorizontal="true"
+                android:textColor="@color/colorText"
                 android:paddingBottom="@dimen/activity_messenger_margin_elements"
                 android:text="@string/activity_messenger_photo" />
 
@@ -84,6 +86,7 @@
                     android:layout_below="@+id/keyboard_album_image"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:textColor="@color/colorText"
                     android:text="@string/activity_messenger_album" />
 
             </RelativeLayout>
@@ -112,6 +115,7 @@
                     android:layout_below="@+id/keyboard_audio_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:textColor="@color/colorText"
                     android:text="@string/activity_messenger_audio" />
             </RelativeLayout>
 
@@ -131,6 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/keyboard_location_button"
                 android:layout_centerHorizontal="true"
+                android:textColor="@color/colorText"
                 android:paddingBottom="@dimen/activity_messenger_margin_elements"
                 android:text="@string/activity_messenger_location" />
 
@@ -156,6 +161,7 @@
                     android:layout_below="@+id/keyboard_contact_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:textColor="@color/colorText"
                     android:text="@string/activity_messenger_contact" />
             </RelativeLayout>
 
@@ -180,6 +186,7 @@
                     android:layout_below="@+id/keyboard_document_relative_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:textColor="@color/colorText"
                     android:text="@string/activity_messenger_document" />
             </RelativeLayout>
 
@@ -199,6 +206,7 @@
                 android:layout_below="@+id/keyboard_link_button"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                android:textColor="@color/colorText"
                 android:text="@string/activity_messenger_link" />
 
             <RelativeLayout
@@ -222,6 +230,7 @@
                     android:layout_below="@+id/keyboard_save_button"
                     android:layout_centerHorizontal="true"
                     android:paddingBottom="@dimen/activity_messenger_margin_elements"
+                    android:textColor="@color/colorText"
                     android:text="@string/activity_messenger_save" />
             </RelativeLayout>
 
