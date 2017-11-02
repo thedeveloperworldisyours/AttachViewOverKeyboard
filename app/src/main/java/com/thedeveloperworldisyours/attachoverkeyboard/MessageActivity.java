@@ -6,6 +6,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -26,7 +27,7 @@ import android.widget.ScrollView;
 public class MessageActivity extends AppCompatActivity {
 
     private PopupWindow mPopupWindow;
-    private RelativeLayout mParentLayout;
+    private ConstraintLayout mParentLayout;
     private boolean mIsKeyBoardVisible;
     private boolean mIsPopupVisible;
     ScrollView mScrollView;
@@ -37,7 +38,7 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.message_activity);
 
-        mParentLayout = (RelativeLayout) findViewById(R.id.root_view);
+        mParentLayout = (ConstraintLayout) findViewById(R.id.root_view);
         mButton = (Button) findViewById(R.id.activity_messenger_button);
 
 
