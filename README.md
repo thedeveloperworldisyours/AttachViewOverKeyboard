@@ -1,7 +1,7 @@
 # AttachViewOverKeyboard
 Attach View Over Keyboard
 
-**[You'll find the supporting medium article for this project here!](http://thedeveloperworldisyours.com/android/view-over-keyboard/)**
+**[You'll find the supporting article for this project here!](http://thedeveloperworldisyours.com/android/view-over-keyboard/)**
 <p align="center">
  <img src="https://github.com/thedeveloperworldisyours/AttachViewOverKeyboard/blob/master/viewOverKeyboard.gif" width="300px" />
 </p>
